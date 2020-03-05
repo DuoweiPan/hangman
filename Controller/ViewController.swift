@@ -15,18 +15,17 @@ class HangmanViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var curPhrase: UILabel!
-
     
     @IBOutlet weak var hangManImg: UIImageView!
     @IBOutlet weak var wrongGuess: UILabel!
+    
+    @IBOutlet weak var InputText: UITextField!
     
     // MARK: - Class Props/Vars
     let incorrectHeader = "Incorrect guesses: "
     
     // MARK: - IBActions
-    
-    @IBOutlet weak var pressGuess: UIButton!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -34,6 +33,21 @@ class HangmanViewController: UIViewController {
         curPhrase.text = curGame.getPhrase()
         wrongGuess.text = incorrectHeader
         hangManImg.image = UIImage(named: "hangman1")
+    }
+    
+    
+    @IBAction func pressGuess(_ sender: UIButton) {
+        var guessChar: Character = "_"
+        if let c = InputText.text {
+            guessChar = Character(c)
+        }
+        if curGame.guess(cur: guessChar) {
+            curPhrase.text = curGame.getPhrase()
+        } else {
+            hangManImg.image = UIImage(named: "hangman" + "\(curGame.countImg)")
+            wrongGuess.text = String(curGame.wrongChar)
+        }
+        
     }
     
     // MARK: - Class Methods

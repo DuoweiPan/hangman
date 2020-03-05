@@ -58,6 +58,7 @@ class Hangman {
     var guessedChar: [Character] = []
     var curPhrase = ""
     var life = 6
+    var countImg = 1
     
     // MARK: - Your Code Here
     func setPhrase(){
@@ -72,6 +73,7 @@ class Hangman {
         if !(curPhrase.contains(cur)) {
             wrongChar.append(cur)
             life -= 1
+            countImg += 1
             return false
         } else {
             if !guessedChar.contains(cur) {

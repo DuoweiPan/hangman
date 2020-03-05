@@ -42,6 +42,9 @@
                                 <state key="normal" title="GUESS">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="pressGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bDk-io-Ozv"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter your guess:" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Ar1-VB-Cic">
                                 <rect key="frame" x="18" y="516" width="374" height="34"/>
@@ -65,9 +68,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="InputText" destination="Ar1-VB-Cic" id="LU9-CZ-L10"/>
                         <outlet property="curPhrase" destination="yZX-jk-QKN" id="iQ0-Ze-jxE"/>
                         <outlet property="hangManImg" destination="edp-Bn-8rs" id="5Bn-Jp-gMb"/>
-                        <outlet property="pressGuess" destination="o7E-M5-W5B" id="nCe-8E-d5n"/>
                         <outlet property="wrongGuess" destination="GIt-4P-k25" id="61M-bm-R8x"/>
                     </connections>
                 </viewController>
