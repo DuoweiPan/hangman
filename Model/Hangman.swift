@@ -65,6 +65,7 @@ class Hangman {
             curPhrase = res
         }
         guessedChar = Array(repeating: "_", count: curPhrase.count)
+        
     }
     
     func guess(cur: Character) -> Bool{
@@ -83,6 +84,15 @@ class Hangman {
             }
             return true
         }
+    }
+    
+    func getPhrase() -> String {
+        var display = ""
+        for i in 0...guessedChar.count - 1 {
+            display.append(guessedChar[i])
+            display.append(" ")
+        }
+        return display
     }
     
     func canContinue() -> Bool {
