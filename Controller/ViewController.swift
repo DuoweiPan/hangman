@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HangmanViewController: UIViewController {
+class HangmanViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - Instances: Models
     var curGame: Hangman = Hangman()
@@ -24,18 +24,31 @@ class HangmanViewController: UIViewController {
     // MARK: - Class Props/Vars
     let incorrectHeader = "Incorrect guesses: "
     
-    // MARK: - IBActions
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //limit input text field to length 1
+        InputText.delegate = self
+        
         curGame.setPhrase()
         curPhrase.text = curGame.getPhrase()
         wrongGuess.text = incorrectHeader
         hangManImg.image = UIImage(named: "hangman1")
+        InputText.placeholder = "Enter your guess!"
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        let maxLength = 1
+        var currentString: NSString = ""
+        if let s = textField.text {
+             currentString = s as NSString
+        }
+        let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
+    }
     
+    // MARK: - IBActions
     @IBAction func pressGuess(_ sender: UIButton) {
         var guessChar: Character = "_"
         if let c = InputText.text {
@@ -50,6 +63,14 @@ class HangmanViewController: UIViewController {
         
     }
     
+    @IBAction func restart(_ sender: UIButton) {
+        curGame = Hangman()
+        curGame.setPhrase()
+        curPhrase.text = curGame.getPhrase()
+        wrongGuess.text = incorrectHeader
+        hangManImg.image = UIImage(named: "hangman1")
+        InputText.placeholder = "Enter your guess!"
+    }
     // MARK: - Class Methods
     
     private func reset() -> Void { return }

@@ -63,20 +63,20 @@ class Hangman {
     // MARK: - Your Code Here
     func setPhrase(){
         if let res = wwdcArray.randomElement() {
-            curPhrase = res
+            curPhrase = res.lowercased()
         }
         guessedChar = Array(repeating: "_", count: curPhrase.count)
         
     }
     
     func guess(cur: Character) -> Bool{
-        if !(curPhrase.contains(cur)) {
+        if !(curPhrase.contains(cur)) && !(wrongChar.contains(cur)) {
             wrongChar.append(cur)
             life -= 1
             countImg += 1
             return false
         } else {
-            if !guessedChar.contains(cur) {
+            if !guessedChar.contains(cur){
                 for i in 0...strlen(curPhrase)-1 {
                     let index = curPhrase.index(curPhrase.startIndex, offsetBy: i)
                     if (cur == curPhrase[index]){
