@@ -24,8 +24,8 @@ class HangmanViewController: UIViewController, UITextFieldDelegate{
     
     // MARK: - Class Props/Vars
     let incorrectHeader = "Incorrect guesses: "
-    let winAlert = UIAlertController(title: "result", message: "you won!", preferredStyle: .alert)
-    let loseAlert = UIAlertController(title: "result", message: "you lost", preferredStyle: .alert)
+    var winAlert = UIAlertController(title: "result", message: "you won!", preferredStyle: .alert)
+    var loseAlert = UIAlertController(title: "result", message: "you lost", preferredStyle: .alert)
     let restartAction = UIAlertAction(title: "Play Again!", style: .default, handler: nil)
     
     override func viewDidLoad() {
@@ -78,6 +78,8 @@ class HangmanViewController: UIViewController, UITextFieldDelegate{
             wrongGuess.text = incorrectHeader
             hangManImg.image = UIImage(named: "hangman1")
             InputText.placeholder = "Enter your guess!"
+            winAlert = UIAlertController(title: "result", message: "you won!", preferredStyle: .alert)
+            loseAlert = UIAlertController(title: "result", message: "you lost", preferredStyle: .alert)
         }
     }
     
@@ -88,6 +90,8 @@ class HangmanViewController: UIViewController, UITextFieldDelegate{
         wrongGuess.text = incorrectHeader
         hangManImg.image = UIImage(named: "hangman1")
         InputText.placeholder = "Enter your guess!"
+        winAlert = UIAlertController(title: "result", message: "you won!", preferredStyle: .alert)
+        loseAlert = UIAlertController(title: "result", message: "you lost", preferredStyle: .alert)
     }
     // MARK: - Class Methods
     
