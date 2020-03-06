@@ -13,7 +13,6 @@ class Hangman {
         "Good morning",
         "We have developers here",
         "June Fourth",
-        "World Wide Developers Conference",
         "San Jose Convention Center",
         "App Store turns ten",
         "This is mind blowing",
@@ -24,13 +23,10 @@ class Hangman {
         "Today is all about software",
         "Craig Federighi",
         "Hair Force One",
-        "tens of millions of students",
         "Swift on the App Store",
-        "fastest growing programming language",
         "Swift Playgrounds",
         "group of creators",
         "The App Store",
-        "Your creativity and hard work",
         "Tim Cook",
         "Split View",
         "Drag and Drop",
@@ -98,11 +94,11 @@ class Hangman {
     }
     
     func canContinue() -> Bool {
-        return life > 0
+        return life > 0 && guessedChar.contains("_")
     }
     
     func checkWin() -> Bool {
-        return canContinue() && !guessedChar.contains("_")
+        return life > 0
     }
 }
 
