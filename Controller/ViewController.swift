@@ -61,7 +61,7 @@ class HangmanViewController: UIViewController, UITextFieldDelegate{
             curPhrase.text = curGame.getPhrase()
         } else {
             hangManImg.image = UIImage(named: "hangman" + "\(curGame.countImg)")
-            wrongGuess.text = String(curGame.wrongChar)
+            wrongGuess.text = incorrectHeader +  String(curGame.wrongChar)
         }
         InputText.text = ""
         if !curGame.canContinue() {
