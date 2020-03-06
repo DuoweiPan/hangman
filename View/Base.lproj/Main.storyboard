@@ -22,7 +22,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="_ _ _ _ _ _ _ _ " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="yZX-jk-QKN" userLabel="curPhrase">
-                                <rect key="frame" x="50" y="398" width="279" height="34"/>
+                                <rect key="frame" x="50" y="400" width="314" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -34,12 +34,17 @@
                                     <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d7w-BZ-UCp"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edp-Bn-8rs">
-                                <rect key="frame" x="50" y="99" width="314" height="291"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7E-M5-W5B" userLabel="pressGuess">
-                                <rect key="frame" x="150" y="440" width="103" height="46"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Ar1-VB-Cic">
+                                <rect key="frame" x="18" y="516" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edp-Bn-8rs">
+                                <rect key="frame" x="50" y="94" width="314" height="291"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7E-M5-W5B" userLabel="pressGuess">
+                                <rect key="frame" x="156" y="439" width="103" height="46"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
                                 <state key="normal" title="GUESS">
@@ -49,24 +54,24 @@
                                     <action selector="pressGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bDk-io-Ozv"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Ar1-VB-Cic">
-                                <rect key="frame" x="18" y="516" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="edp-Bn-8rs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="2JZ-ye-AFp"/>
-                            <constraint firstItem="GIt-4P-k25" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="443" id="5gt-tv-oqm"/>
-                            <constraint firstItem="yZX-jk-QKN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="355" id="F6v-8c-nax"/>
+                            <constraint firstItem="edp-Bn-8rs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="Apo-1a-L3b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Chd-Jo-v5D" secondAttribute="trailing" constant="22" id="IKO-RR-if7"/>
+                            <constraint firstItem="o7E-M5-W5B" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JBO-JG-UQU"/>
+                            <constraint firstItem="edp-Bn-8rs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="L66-6t-gLo"/>
+                            <constraint firstItem="yZX-jk-QKN" firstAttribute="top" secondItem="edp-Bn-8rs" secondAttribute="bottom" constant="15" id="Pra-t1-b2x"/>
+                            <constraint firstItem="yZX-jk-QKN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PvC-Vx-Jil"/>
+                            <constraint firstItem="o7E-M5-W5B" firstAttribute="top" secondItem="yZX-jk-QKN" secondAttribute="bottom" constant="7.5" id="QZZ-Tw-iDm"/>
                             <constraint firstItem="Chd-Jo-v5D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="Svz-x7-jMo"/>
                             <constraint firstItem="GIt-4P-k25" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UFq-u1-htU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yZX-jk-QKN" secondAttribute="trailing" constant="30" id="ewW-qI-0kx"/>
-                            <constraint firstItem="yZX-jk-QKN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="yHM-7Q-dHP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="edp-Bn-8rs" secondAttribute="trailing" constant="50" id="zrJ-1g-3GA"/>
+                            <constraint firstItem="edp-Bn-8rs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="YwH-5n-AuY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="edp-Bn-8rs" secondAttribute="bottom" constant="472" id="bxV-Cq-3PU"/>
+                            <constraint firstItem="yZX-jk-QKN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="eEr-0C-xpg"/>
+                            <constraint firstItem="GIt-4P-k25" firstAttribute="top" secondItem="o7E-M5-W5B" secondAttribute="bottom" constant="-5" id="p3w-Cb-MgE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yZX-jk-QKN" secondAttribute="trailing" constant="50" id="qPS-jS-SNe"/>
+                            <constraint firstItem="Ar1-VB-Cic" firstAttribute="top" secondItem="GIt-4P-k25" secondAttribute="bottom" constant="-4" id="uW1-oN-Ijd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
